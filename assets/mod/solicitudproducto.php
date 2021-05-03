@@ -29,7 +29,7 @@ if($_POST) {
         
         require("connect.php");
         $fecha = new DateTime("now", new DateTimeZone("Europe/Madrid"));
-        $insert_value = 'INSERT INTO solicitudproducto (Nombre, Descripción, Ingredientes, Calorias, Precio, Fecha) VALUES (\''.mysqli_real_escape_string($conexion,$_POST['Nombre']).'\',\''.mysqli_real_escape_string($conexion,$_POST['Descripción']).'\',\''.mysqli_real_escape_string($conexion,$_POST['Ingredientes']).'\',\''.mysqli_real_escape_string($conexion,$_POST['Calorias']).'\',\''.mysqli_real_escape_string($conexion,$_POST['Precio']).'\',\''.$fecha->format('Y-m-d H:i:s').'\')';
+        $insert_value = 'INSERT INTO solicitudproducto (nombre, descripcion, ingredientes, calorias, precio, fecha) VALUES (\''.mysqli_real_escape_string($conexion,$_POST['name']).'\',\''.mysqli_real_escape_string($conexion,$_POST['descripcion']).'\',\''.mysqli_real_escape_string($conexion,$_POST['ingredientes']).'\',\''.mysqli_real_escape_string($conexion,$_POST['calorias']).'\',\''.mysqli_real_escape_string($conexion,$_POST['precio']).'\',\''.$fecha->format('Y-m-d H:i:s').'\')';
         if($conexion->query($insert_value) === TRUE){
             echo "<br>Gracias por contactarnos, recibirás respuestas pronto. <a href='../../'>Volver</a></p><br>";
             if(mail($recipient, $subject, $message, $headers)) {
