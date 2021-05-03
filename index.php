@@ -132,6 +132,7 @@
             <input class="form-control mr-sm-1 busqueda" id="myInput" autocomplete="off" type="text" placeholder="Búsqueda producto">
           </div>
             <button class="invertbd btn" data-target="producto" id="search" data-toggle='modal'><i class="fas fa-search"></i></button>
+            <button class="invertbd btn" href="#" id="añadirproducto" style="margin-left: 15px;" data-toggle="modal" data-target="#myModal2">Solicitud producto</button>
         </div>
         <ul class="navbar-nav d-flex align-items-center">
           <li class="nav-item active">
@@ -426,6 +427,57 @@ $(document).ready(function(){
                                 <div class="form-group">
                                     <label for="name"> Mensaje*</label>
                                     <textarea class="form-control" type="textarea" name="mensaje" id="mensaje" placeholder="Escriba su mensaje aquí..." maxlength="6000" rows="7" required></textarea>
+                                    <div class="valid-feedback">Valido</div>
+                                    <div class="invalid-feedback">Completa este campo por favor.</div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="cancel" class="btn btn-secondary btn-lg mr-4 ml-4 mt-3" data-dismiss="modal">Cancelar</button>
+                                    <button type="submit" class="btn btn-primary btn-lg mr-2 mt-3" id="btnContactUs">Enviar &rarr;</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="myModal2" class="modal fade" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" style="max-width: 760px;">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Solicitud añadir producto</h4>
+                            <button type="button" class="btn close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="assets/mod/contact.php" method="post" novalidate class="needs-validation">
+                                <p> Rellene el siguiente formulario introduciendo los datos del producto que hayas visto en la cafeteria y no está en la página web. </p>
+                                <p> Los campos requeridos están marcados con *. </p>
+                                <div class="form-group">
+                                    <label for="name"> Nombre del producto*</label>
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Nombre del producto..." required maxlength="50">
+                                    <div class="valid-feedback">Valido</div>
+                                    <div class="invalid-feedback">Completa este campo por favor.</div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="name"> Descripción del producto*</label>
+                                    <input type="test" class="form-control" id="descripción" name="descripción" placeholder="Descripción" required maxlength="50">
+                                    <div class="valid-feedback">Valido</div>
+                                    <div class="invalid-feedback">Completa este campo por favor.</div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email"> Ingredientes*</label>
+                                    <input type="text" class="form-control" id="ingredientes" name="ingredientes" placeholder="Ingredientes" required maxlength="50">
+                                    <div class="valid-feedback">Valido</div>
+                                    <div class="invalid-feedback">Completa este campo por favor.</div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="asunto">Calorias (Si las conoces)</label>
+                                    <input type="text" class="form-control" id="calorias" name="calorias" placeholder="Calorias" maxlength="50">
+                                    <div class="valid-feedback">Valido</div>
+                                    <div class="invalid-feedback">Completa este campo por favor.</div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="name"> Precio*</label>
+                                    <input type="text" class="form-control" id="precio" name="precio" placeholder="Precio" required maxlength="50">
                                     <div class="valid-feedback">Valido</div>
                                     <div class="invalid-feedback">Completa este campo por favor.</div>
                                 </div>
