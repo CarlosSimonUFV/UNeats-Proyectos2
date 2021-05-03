@@ -448,7 +448,7 @@ $(document).ready(function(){
                             <button type="button" class="btn close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
                         </div>
                         <div class="modal-body">
-                            <form action="assets/mod/contact.php" method="post" novalidate class="needs-validation">
+                            <form action="assets/mod/solicitudproducto.php" method="post" novalidate class="needs-validation">
                                 <p> Rellene el siguiente formulario introduciendo los datos del producto que hayas visto en la cafeteria y no está en la página web. </p>
                                 <p> Los campos requeridos están marcados con *. </p>
                                 <div class="form-group">
