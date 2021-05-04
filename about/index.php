@@ -178,7 +178,7 @@
                           Lua Mora Columbrans</p>
                       </div>
                       <div class="item-role px-2">
-                          <p>SM & Desarrollador</p>
+                          <p>Desarrollador</p>
                           <p>Ingeniería Informática, con Ciberseguridad y Hacking Ético.</p>
                       </div>
                   </div>
@@ -193,7 +193,7 @@
                           Andrés Gascón Fernández</p>
                       </div>
                       <div class="item-role px-2">
-                          <p>SM & Desarrollador</p>
+                          <p>Desarrollador</p>
                           <p>Ingeniería Informática, con Ciberseguridad y Hacking Ético.</p>
                       </div>
                   </div>
