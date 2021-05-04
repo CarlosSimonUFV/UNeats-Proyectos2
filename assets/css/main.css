@@ -325,6 +325,7 @@ input[type=submit] {
 }
 .nav-item{
   margin:5px!important;
+  width: 100px;
 }
 @media screen and (max-width: 320px) {
   .form-signin #logo{

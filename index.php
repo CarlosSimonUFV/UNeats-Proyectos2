@@ -1,12 +1,22 @@
 <?php
+session_start();
 	function Mostrarproducto($cat){
 			include("assets/mod/connect.php");
 		if (!$conexion) {
-		die('No se ha podido conectar a la base de datos');
-	}
+			die('No se ha podido conectar a la base de datos');
+		}
 	else{
 
 	$table = "producto";
+	if (isset($_SESSION['uni'])) {
+		if($_SESSION['uni'] == "poli"){
+			$table = "productopoli";
+		}else if($_SESSION['uni'] == "complu"){
+			$table = "productocomplu";
+		}
+	}
+
+	
 	$result=mysqli_query($conexion,"SELECT * FROM ".$table."");
 	$cols=mysqli_num_rows($result);
 	$mos=0;
@@ -110,6 +120,12 @@
 		color:var(--bg-color)!important;
 		transition: all .25s ease;
 	}
+	.btncheck{
+		background-image : url('./media/img/check.png');
+		background-repeat:no-repeat;
+		padding-top: 0px;
+	}
+	
 </style>
 </head>
 <script src="assets/js/dark-mode.js"></script>
@@ -118,12 +134,41 @@
     <nav class="navbar navbar-expand-lg shadow justify-content-sm-start">
 
       <a class="navbar-brand order-0 order-lg-0 ml-lg-0 ml-2 mr-auto" href="#">
-      	<img id="mylogo" src="media/img/logo2.png">
+      	<img style="width:100px;height:30px" src="./media/img/logo2.png">
       </a>
+	  
+	  <form action="seleccione_uni.php" method="GET" style="width:550px;padding-left:10px">
+		<label>Cambia uni:</label>
+		<select id="uni" name="uni" onchange="this.form.submit()">
+		  <?php if ($_SESSION['uni'] == "poli"){?>
+			<option value="ufv" >UFVeats</option>
+			<option value="poli" selected>POLIeats</option>
+			<option value="complu">COMPLUeats</option>
+		  <?php } ?>
+		  <?php if ($_SESSION['uni'] == "complu"){?>
+			<option value="ufv" >UFVeats</option>
+			<option value="poli">POLIeats</option>
+			<option value="complu" selected>COMPLUeats</option>
+		  <?php } ?>
+		  <?php if ($_SESSION['uni'] == "ufv"){?>
+			<option value="ufv" selected >UFVeats</option>
+			<option value="poli">POLIeats</option>
+			<option value="complu">COMPLUeats</option>
+		  <?php } ?>
+		  <?php if (!isset($_SESSION['uni'])){?>
+			<option value="ufv" selected >UFVeats</option>
+			<option value="poli">POLIeats</option>
+			<option value="complu">COMPLUeats</option>
+		  <?php } ?>
+		</select>
+			
+	  </form>
 
       <button class="navbar-toggler align-self-start mt-3" style="border-radius: 0!important;" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa fa-bars"></i>
       </button>
+	  
+	 
 
 	<div style="background:var(--color);" class="collapse navbar-collapse" id="navbarText">
 		<div  class="p-3 w-100 align-items-center d-flex flex-column flex-lg-row flex-xl-row justify-content-lg-end">
@@ -133,6 +178,9 @@
           </div>
             <button class="invertbd btn" data-target="producto" id="search" data-toggle='modal'><i class="fas fa-search"></i></button>
         </div>
+		<a class="navbar-brand order-0 order-lg-0 ml-lg-0 ml-2 mr-auto" href="ofertas/" style="padding-left:20px">
+			<img style="width:30px;height:30px" src="./media/img/oferta.png">
+		</a>
         <ul class="navbar-nav d-flex align-items-center">
           <li class="nav-item active">
             <a class="invert nav-link" href="#">Inicio</a>
@@ -142,6 +190,9 @@
           </li>
           <li class="nav-item">
             <a class="invert nav-link" href="#" data-toggle="modal" data-target="#myModal">Contacto</a>
+          </li>
+		   <li class="nav-item">
+            <a class="invert nav-link" href="./menudiario/">Menu diario</a>
           </li>
           <li class="nav-item">
 				  <a class="nav-link " href="./login/" ><i class="invert icono far fa-user mr-1 ml-1"></i></a>
