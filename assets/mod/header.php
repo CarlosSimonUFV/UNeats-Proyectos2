@@ -2,8 +2,35 @@
     <nav class="navbar navbar-expand-lg shadow justify-content-sm-start">
 
       <a class="navbar-brand order-0 order-lg-0 ml-lg-0 ml-2 mr-auto" href="#">
-      	<img id="mylogo" src="../media/img/logo2.png">
+      	<img style="width:100px;height:30px" src="../media/img/logo2.png">
       </a>
+	  
+	   <form action="../seleccione_uni.php" method="GET" style="width:550px;padding-left:15px">
+		<label>Cambia uni:</label>
+		<select id="uni" name="uni" onchange="this.form.submit()">
+		  <?php if ($_SESSION['uni'] == "poli"){?>
+			<option value="ufv" >UFVeats</option>
+			<option value="poli" selected>POLIeats</option>
+			<option value="complu">COMPLUeats</option>
+		  <?php } ?>
+		  <?php if ($_SESSION['uni'] == "complu"){?>
+			<option value="ufv" >UFVeats</option>
+			<option value="poli">POLIeats</option>
+			<option value="complu" selected>COMPLUeats</option>
+		  <?php } ?>
+		  <?php if ($_SESSION['uni'] == "ufv"){?>
+			<option value="ufv" selected >UFVeats</option>
+			<option value="poli">POLIeats</option>
+			<option value="complu">COMPLUeats</option>
+		  <?php } ?>
+		  <?php if (!isset($_SESSION['uni'])){?>
+			<option value="ufv" selected >UFVeats</option>
+			<option value="poli">POLIeats</option>
+			<option value="complu">COMPLUeats</option>
+		  <?php } ?>
+		</select>
+	  </form>
+
 
       <button class="navbar-toggler align-self-start mt-3" style="border-radius: 0!important;" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa fa-bars"></i>
@@ -11,6 +38,9 @@
 
 	<div style="background:var(--color);" class="collapse navbar-collapse" id="navbarText">
 		<div  class="p-3 w-100 align-items-center d-flex flex-column flex-lg-row flex-xl-row justify-content-lg-end">
+		<a href="../ofertas/" style="padding-left:20px">
+			<img style="width:30px;height:30px" src="../media/img/oferta.png">
+		</a>
         <ul class="navbar-nav d-flex align-items-center">
           <li class="nav-item active">
             <a class="invert nav-link" href="../">Inicio</a>
@@ -20,6 +50,9 @@
           </li>
           <li class="nav-item">
             <a class="invert nav-link" href="#" data-toggle="modal" data-target="#myModal">Contacto</a>
+          </li>
+		  <li class="nav-item" style="width:105px">
+            <a class="invert nav-link" href="../menudiario">Menú Diario</a>
           </li>
           <li class="nav-item">
 				  <a class="nav-link " href="../login/" ><i class="invert icono far fa-user mr-1 ml-1"></i></a>
