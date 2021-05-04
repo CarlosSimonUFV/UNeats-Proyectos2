@@ -1,101 +1,65 @@
 <?php
-session_start();
-	function Mostrarproducto($cat){
-			include("assets/mod/connect.php");
+	function Mostrarmenu(){
+			include("../assets/mod/connect.php");
 		if (!$conexion) {
-			die('No se ha podido conectar a la base de datos');
-		}
+		die('No se ha podido conectar a la base de datos');
+	}
 	else{
 
-	$table = "producto";
-	if (isset($_SESSION['uni'])) {
-		if($_SESSION['uni'] == "poli"){
-			$table = "productopoli";
-		}else if($_SESSION['uni'] == "complu"){
-			$table = "productocomplu";
-		}
-	}
+	$table = "ofertas";
+	$mos=0;
 
-	
+		
 	$result=mysqli_query($conexion,"SELECT * FROM ".$table."");
 	$cols=mysqli_num_rows($result);
 	$mos=0;
-	for($id=1; $id <= $cols; $id++){
-		if($cat == "none"){
-			$so1=mysqli_query($conexion,"SELECT * FROM ".$table." WHERE id = '".$id."'");
-		}
-		else if($cat=="DietaEspecial"){
-			$so1=mysqli_query($conexion,"SELECT * FROM ".$table." WHERE id = '".$id."' AND (categoria = 'Hipocalorica' OR categoria = 'Hipercalorica' OR categoria = 'Proteica')");
-		}else if($cat=="VeganoVegetariano"){
-			$so1=mysqli_query($conexion,"SELECT * FROM ".$table." WHERE id = '".$id."' AND (categoria = 'Vegano' OR categoria = 'Vegetariano')");
-		}else{
-			$so1=mysqli_query($conexion,"SELECT * FROM ".$table." WHERE id = '".$id."' AND categoria = '".$cat."'");
-		}
 	
-	$res=mysqli_fetch_array($so1);
-	if(isset($res)){
-		if($res['categoria']=="Hipocalorica" || $res['categoria']=="Hipercalorica" || $res['categoria']=="Proteica")
-		$categoria = "Especial";
-		else if($res['categoria']=="Vegetariano" || $res['categoria']=="Vegano")
-		$categoria = "Veg";
-		else
-		$categoria = mysqli_real_escape_string($conexion,$res['categoria']);
-	?>
-	<div class="colu col-sm-6 col-md-4 col-lg-3">
-		<div class="tot">
-			<div class="cont">
-				<img class="dip1" src="media/img/<?php echo $res['imagen']; ?>"/>
-				<?php
-						if($categoria!=""){
-				?>
-				<img class="icon" src="media/icon/<?php echo $categoria; ?>.png"/>
-				<?php
-				}
-				?>
-			</div>  	
-				<div class="dat">
-					<div class="nom">
-						<h6 class="neg"><?php echo $res['nombre']; ?></h6>
+	for($id=1; $id <= $cols; $id++){
+		
+		$so1=mysqli_query($conexion,"SELECT * FROM ".$table." WHERE id = '".$id."'");
+		
+		$res=mysqli_fetch_array($so1);
+		
+		if(isset($res)){
+			
+		?>
+		<div class="colu col-sm-6 col-md-4 col-lg-3">
+			<div class="tot">
+				<div class="cont">
+					<img class="dip1" src="../media/img/<?php echo $res['imagen']; ?>"/>
+					
+				</div>  	
+					<div class="dat">
+						<div class="nom">
+							<h6 class="neg"><?php echo $res['descripcion']; ?></h6>
+						</div>
+						<h6 class="neg"><?php echo $res['precio']?> € <br> </h6>
 					</div>
-					<h6 class="neg"><?php echo $res['precio']?> € <br> <?php echo $res['cantidad']?> kcal</h6>
-				</div>
-				<a href="#producto<?php echo $res['id']; ?>" class="btn-open-popup"><div class="info dat">
-					Más información
-				</div>
-				</a>
-		</div>   
-	</div>
-	<div class="container-all" id="producto<?php echo $res['id']; ?>">
-		<div class="popup">
-			<div class="img"><img class="dip1" src="media/img/<?php echo $res['imagen']; ?>"/></div>
-			<div class="container-text">
-				<?php
-					if($res['categoria']=="Hipocalorica" || $res['categoria']=="Hipercalorica" || $res['categoria']=="Proteica")
-					$categoria = "Especial";
-					else if($res['categoria']=="Vegetariano" || $res['categoria']=="Vegano")
-					$categoria = "Veg";
-					else
-					$categoria = mysqli_real_escape_string($conexion,$res['categoria']);
-						if($categoria!=""){
-				?>
-				<img class="iconspecial" src="media/icon/<?php echo $categoria; ?>.png"/>
-				<?php
-				}
-				?>
-				<div class="nom">
-						<h1 class="neg"><?php echo $res['nombre']; ?></h1>
-				</div>				
-				<p><h5 class="neg">Descripción:</h5><?php echo $res['descripcion']; ?></p>
-				<p><h5 class="neg">Ingredientes:</h5><?php echo $res['ingredientes']; ?></p>
-				<p><h5 class="neg">Calorias:</h5><?php echo $res['cantidad']; ?> kcal</p>
-				<p><h5 class="neg">Precio:</h5><?php echo $res['precio']; ?> €</p>
-			</div>
-			<a href="#" class="btn-close-popup">X</a>
+					<a href="#producto<?php echo $res['id']; ?>" class="btn-open-popup"><div class="info dat">
+						Más información
+					</div>
+					</a>
+			</div>   
 		</div>
+		<div class="container-all" id="producto<?php echo $res['id']; ?>">
+			<div class="popup">
+				<div class="img"><img class="dip1" src="../media/img/<?php echo $res['imagen']; ?>"/></div>
+				<div class="container-text">
+					
+					<div class="nom">
+							<h1 class="neg"><?php echo substr($res['imagen'],0,strlen($res['imagen'])-4); ?></h1>
+					</div>				
+					<p><h5 class="neg">Descripción:</h5><?php echo $res['descripcion']; ?></p>
+					<p><h5 class="neg">Precio:</h5><?php echo $res['precio']; ?> €</p>
+				</div>
+				<a href="#" class="btn-close-popup">X</a>
+			</div>
 
-	</div>
-	<?php
-}
+		</div>
+		
+		
+		<?php
+	}
 }
 }
 }
@@ -105,11 +69,11 @@ session_start();
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no">
-	<link href="assets/bt/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../assets/bt/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/6d67b863f5.js" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="../assets/css/main.css">
 	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-	<link rel="icon" href="media/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="../media/favicon.ico" type="image/x-icon">
 	<title>UFVeats</title>
 <style>
 	a{
@@ -121,23 +85,23 @@ session_start();
 		transition: all .25s ease;
 	}
 	.btncheck{
-		background-image : url('./media/img/check.png');
+		background-image : url('../media/img/check.png');
 		background-repeat:no-repeat;
 		padding-top: 0px;
 	}
-	
 </style>
 </head>
-<script src="assets/js/dark-mode.js"></script>
-<?php include("assets/mod/getproductos.php") ?>
+<script src="../assets/js/dark-mode.js"></script>
+<?php include("../assets/mod/getproductos.php") ?>
 <header class="header sticky-top">
     <nav class="navbar navbar-expand-lg shadow justify-content-sm-start">
 
       <a class="navbar-brand order-0 order-lg-0 ml-lg-0 ml-2 mr-auto" href="#">
-      	<img style="width:100px;height:30px" src="./media/img/logo2.png">
+      	<img style="width:100px;height:30px" src="../media/img/logo2.png">
+		
       </a>
 	  
-	  <form action="seleccione_uni.php" method="GET" style="width:550px;padding-left:10px">
+	   <form action="../seleccione_uni.php" method="GET" style="width:550px;padding-left:10px">
 		<label>Cambia uni:</label>
 		<select id="uni" name="uni" onchange="this.form.submit()">
 		  <?php if ($_SESSION['uni'] == "poli"){?>
@@ -161,14 +125,11 @@ session_start();
 			<option value="complu">COMPLUeats</option>
 		  <?php } ?>
 		</select>
-			
-	  </form>
+		 </form>
 
       <button class="navbar-toggler align-self-start mt-3" style="border-radius: 0!important;" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa fa-bars"></i>
       </button>
-	  
-	 
 
 	<div style="background:var(--color);" class="collapse navbar-collapse" id="navbarText">
 		<div  class="p-3 w-100 align-items-center d-flex flex-column flex-lg-row flex-xl-row justify-content-lg-end">
@@ -178,24 +139,24 @@ session_start();
           </div>
             <button class="invertbd btn" data-target="producto" id="search" data-toggle='modal'><i class="fas fa-search"></i></button>
         </div>
-		<a class="navbar-brand order-0 order-lg-0 ml-lg-0 ml-2 mr-auto" href="ofertas/" style="padding-left:20px">
-			<img style="width:30px;height:30px" src="./media/img/oferta.png">
+		<a  href="ofertas/" style="padding-left:20px">
+			<img style="width:30px;height:30px" src="../media/img/oferta.png">
 		</a>
         <ul class="navbar-nav d-flex align-items-center">
           <li class="nav-item active">
-            <a class="invert nav-link" href="#">Inicio</a>
+            <a class="invert nav-link" href="../">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="invert nav-link" href="./about/">Nosotros</a>
+            <a class="invert nav-link" href="../about/">Nosotros</a>
           </li>
           <li class="nav-item">
             <a class="invert nav-link" href="#" data-toggle="modal" data-target="#myModal">Contacto</a>
           </li>
 		   <li class="nav-item">
-            <a class="invert nav-link" href="./menudiario/">Menu diario</a>
+            <a class="invert nav-link" href="../menudiario/">Menu diario</a>
           </li>
           <li class="nav-item">
-				  <a class="nav-link " href="./login/" ><i class="invert icono far fa-user mr-1 ml-1"></i></a>
+				  <a class="nav-link " href="../login/" ><i class="invert icono far fa-user mr-1 ml-1"></i></a>
 			    </li>
 		</ul>
         <button type="button" id="dark-mode" class="ml-lg-1 btn btn-outline-dark"><i class="fas fa-sun mr-1"></i><span>Light Mode</span></button>
@@ -383,122 +344,13 @@ $(document).ready(function(){
 });
 </script>
 <body>
-  <div class="mb-5 mt-3">
-			<div class="p-0 container-fluid bots">
-				<div class="row">
-					<div class="mt-2 col-md-3">
-					<a <?php if(isset($_GET["categoria"])){ if($_GET["categoria"] == "VeganoVegetariano" ){echo'href="./"'; }else{echo'href="./?categoria=VeganoVegetariano"';}}else{echo'href="./?categoria=VeganoVegetariano"';}?>>
-						<span class="<?php if(isset($_GET["categoria"])){if($_GET["categoria"] == "VeganoVegetariano"){echo "selected";} }?> w-100 btn btn-default btn-lg bot">Vegano/Vegetariano</span>
-					</a>
-					</div>
-					<div class="mt-2 col-md-3">
-					<a <?php if(isset($_GET["categoria"])){ if($_GET["categoria"] == "Intolerancia" ){echo'href="./"'; }else{echo'href="./?categoria=Intolerancia"';}}else{echo'href="./?categoria=Intolerancia"';}?>>
-						<span class="<?php if(isset($_GET["categoria"])){if($_GET["categoria"] == "Intolerancia"){echo "selected";} }?> w-100 btn btn-default btn-lg bot">Intolerancia</span>
-					</a>
-					</div>
-					<div class="mt-2 col-md-3">
-					<a <?php if(isset($_GET["categoria"])){ if($_GET["categoria"] == "DietaEspecial" ){echo'href="./"'; }else{echo'href="./?categoria=DietaEspecial"';}}else{echo'href="./?categoria=DietaEspecial"';}?>>
-						<span class="<?php if(isset($_GET["categoria"])){if($_GET["categoria"] == "DietaEspecial"){echo "selected";} }?> w-100 btn btn-default btn-lg bot">Dieta Especial</span>
-					</a>
-					</div>
-					<div class="mt-2 col-md-3">
-					<a <?php if(isset($_GET["categoria"])){ if($_GET["categoria"] == "Alergia" ){echo'href="./"'; }else{echo'href="./?categoria=Alergia"';}}else{echo'href="./?categoria=Alergia"';}?>>
-						<span class="<?php if(isset($_GET["categoria"])){if($_GET["categoria"] == "Alergia"){echo "selected";} }?> w-100 btn btn-default btn-lg bot">Alergia</span>
-					</a>
-					</div>
-				</div>
-			</div>
-			<div class="container-fluid bots">
-				<div class="row">
-				<div <?php if(isset($_GET["categoria"])){ if($_GET["categoria"] == "VeganoVegetariano" ){echo'style="display:block"'; }else{echo'style="display:none"';}}else{echo'style="display:none"';}?> class="mt-2 col-lg-4">
-				<a <?php if(isset($_GET["subcategoria"])){ if($_GET["subcategoria"] == "Vegano"){echo'href="./"'; }else{echo'href="./?subcategoria=Vegano&categoria=VeganoVegetariano"';}}else{echo'href="./?subcategoria=Vegano&categoria=VeganoVegetariano"';}?>>
-						<span class="<?php if(isset($_GET["subcategoria"])){if($_GET["subcategoria"] == "Vegano"){echo "selected";} }?> btn btn-default btn-lg bot">Vegano</span>
-					</a>
-				<a <?php if(isset($_GET["subcategoria"])){ if($_GET["subcategoria"] == "Vegetariano"){echo'href="./"'; }else{echo'href="./?subcategoria=Vegetariano&categoria=VeganoVegetariano"';}}else{echo'href="./?subcategoria=Vegetariano&categoria=VeganoVegetariano"';}?>>
-						<span class="<?php if(isset($_GET["subcategoria"])){if($_GET["subcategoria"] == "Vegetariano"){echo "selected";}} ?> btn btn-default btn-lg bot">Vegetariano</span>
-					</a>
-				</div>
-				<div <?php if(isset($_GET["categoria"])){ if($_GET["categoria"] == "DietaEspecial" ){echo'style="display:block"'; }else{echo'style="display:none"';}}else{echo'style="display:none"';}?> class="col-lg-4">
 
-				</div>
-				<div <?php if(isset($_GET["categoria"])){ if($_GET["categoria"] == "DietaEspecial" ){echo'style="display:block"'; }else{echo'style="display:none"';}}else{echo'style="display:none"';}?> class="mt-2 col-lg-8">
-					<a <?php if(isset($_GET["subcategoria"])){ if($_GET["subcategoria"] == "Proteica"){echo'href="./"'; }else{echo'href="./?subcategoria=Proteica&categoria=DietaEspecial"';}}else{echo'href="./?subcategoria=Proteica&categoria=DietaEspecial"';}?>>
-						<span class="<?php if(isset($_GET["subcategoria"])){if($_GET["subcategoria"] == "Proteica"){echo "selected";} }?> btn btn-default btn-lg bot">Proteica</span>
-					</a>
-					<a <?php if(isset($_GET["subcategoria"])){ if($_GET["subcategoria"] == "Hipocalorica"){echo'href="./"'; }else{echo'href="./?subcategoria=Hipocalorica&categoria=DietaEspecial"';}}else{echo'href="./?subcategoria=Hipocalorica&categoria=DietaEspecial"';}?>>
-						<span class="<?php if(isset($_GET["subcategoria"])){if($_GET["subcategoria"] == "Hipocalorica"){echo "selected";}} ?>  btn btn-default btn-lg bot">Hipocalorica</button>
-					<a <?php if(isset($_GET["subcategoria"])){ if($_GET["subcategoria"] == "Hipercalorica"){echo'href="./"'; }else{echo'href="./?subcategoria=Hipercalorica&categoria=DietaEspecial"';} }else{echo'href="./?subcategoria=Hipercalorica&categoria=DietaEspecial"';}?>>
-						<span class="<?php if(isset($_GET["subcategoria"])){if($_GET["subcategoria"] == "Hipercalorica"){echo "selected";} }?>  btn btn-default btn-lg bot">Hipercalorica</button>
-					</a>
-				</div>
-      </div>
-      </div>
-			<div id="myModal" class="modal fade" role="dialog" aria-hidden="true">
-                <div class="modal-dialog" style="max-width: 760px;">
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title">Contacto</h4>
-                            <button type="button" class="btn close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                        </div>
-                        <div class="modal-body">
-                            <form action="assets/mod/contact.php" method="post" novalidate class="needs-validation">
-                                <p> Rellene el siguiente formulario explicando de forma detallada el motivo de su consulta. </p>
-                                <p> Los campos requeridos están marcados con *. </p>
-                                <div class="form-group">
-                                    <label for="name"> Nombre completo*</label>
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="Nombre completo..." required maxlength="50">
-                                    <div class="valid-feedback">Valido</div>
-                                    <div class="invalid-feedback">Completa este campo por favor.</div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email"> Email*</label>
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="Correo electrónico" required maxlength="50">
-                                    <div class="valid-feedback">Valido</div>
-                                    <div class="invalid-feedback">Completa este campo por favor.</div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="consulta"> Motivo de la consulta*</label>
-                                    <select id="consulta" class="form-control" name="consulta" required>
-                                        <option value="Ninguno">Elige..</option>
-                                        <option value="Comida">Duda con alguna comida.</option>
-                                        <option value="Web">Problema con la página web.</option>
-                                        <option value="Otro">Otro.</option>
-                                    </select>
-                                    <div class="valid-feedback">Valido</div>
-                                    <div class="invalid-feedback">Completa este campo por favor.</div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="asunto">Asunto*</label>
-                                    <input type="text" class="form-control" id="asunto" name="asunto" placeholder="Asunto de la consulta..." maxlength="1000" required>
-                                    <div class="valid-feedback">Valido</div>
-                                    <div class="invalid-feedback">Completa este campo por favor.</div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="name"> Mensaje*</label>
-                                    <textarea class="form-control" type="textarea" name="mensaje" id="mensaje" placeholder="Escriba su mensaje aquí..." maxlength="6000" rows="7" required></textarea>
-                                    <div class="valid-feedback">Valido</div>
-                                    <div class="invalid-feedback">Completa este campo por favor.</div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="cancel" class="btn btn-secondary btn-lg mr-4 ml-4 mt-3" data-dismiss="modal">Cancelar</button>
-                                    <button type="submit" class="btn btn-primary btn-lg mr-2 mt-3" id="btnContactUs">Enviar &rarr;</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-			</div>
 			<div class="p-0 container-fluid prim">
 			<div class="mr-0 ml-0 row">
 			<?php
-			if (empty($_GET["categoria"])&&empty($_GET["subcategoria"])) 
-				Mostrarproducto("none");
-			else if(empty($_GET["subcategoria"]))
-				Mostrarproducto($_GET["categoria"]);
-			else
-				Mostrarproducto($_GET["subcategoria"]);
+			 
+				Mostrarmenu();
+			
 			?>
 			</div>
 			</div>
@@ -866,10 +718,10 @@ $(document).ready(function(){
             <li>"Por una cafeteria para todos"</li>
         </ul>
         <ul class="ufv"> 
-                <img src="media/img/Ufv2.png"></img>
+                <img src="../media/img/Ufv2.png"></img>
         </ul>
     </footer>
 </body>
-<script src="assets/bt/js/bootstrap.min.js"></script>
-<script src="assets/js/smooth-scroll.js"></script>
+<script src="../assets/bt/js/bootstrap.min.js"></script>
+<script src="../assets/js/smooth-scroll.js"></script>
 </html>
