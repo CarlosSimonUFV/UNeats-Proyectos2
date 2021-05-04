@@ -1,0 +1,457 @@
+[33mcommit 0688816eeda91d30cd5f4a53beafb4b02b050e96[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/feature/universidades[m[33m, [m[1;31morigin/feature/menudiario[m[33m, [m[1;31morigin/feature/RodillaTelepizza[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Mathias Moser <71728767+matbmoser@users.noreply.github.com>
+Date:   Tue Jan 26 23:04:11 2021 +0100
+
+    Update connect.php
+
+[33mcommit d5528da449d03118eca378b1a8e3a52035b22f5e[m
+Merge: b8175e7 140ef69
+Author: matbmoserufv <matbmoser@gmail.com>
+Date:   Thu Dec 31 16:34:25 2020 +0100
+
+    Merge branch 'release/2.5'
+
+[33mcommit 140ef69642ad47a11fd837e1beaa9c4b08a1f83d[m
+Author: matbmoserufv <matbmoser@gmail.com>
+Date:   Thu Dec 31 03:37:11 2020 +0100
+
+    Modificiaciones de seguridad y roles
+
+[33mcommit 5f2339f218529b93157c1968e8e3f1235c9cd19d[m
+Merge: a500c9f b8175e7
+Author: matbmoserufv <matbmoser@gmail.com>
+Date:   Thu Dec 31 02:00:50 2020 +0100
+
+    Merge tag 'v2.0' into develop
+    
+    Nueva interfaz de modo oscuro añadida, funcionalidad terminada
+
+[33mcommit b8175e75f9474acd1af98315af23e48f970b79bd[m
+Merge: 5b2a56d a500c9f
+Author: matbmoserufv <matbmoser@gmail.com>
+Date:   Thu Dec 31 01:59:29 2020 +0100
+
+    Merge de Nueva Actualizacion de Modo Oscuro
+
+[33mcommit a500c9f166c68676545ff64a511bef400738f838[m
+Author: matbmoserufv <matbmoser@gmail.com>
+Date:   Thu Dec 31 01:58:46 2020 +0100
+
+    Cambio de modo oscuro, funcionalidad terminada
+
+[33mcommit 4db1cf95ddd020c08bd813fa276ff21c71863f89[m
+Author: matbmoserufv <matbmoser@gmail.com>
+Date:   Thu Dec 31 01:20:04 2020 +0100
+
+    Actualizaciones de Accesibilidad y Responsive
+
+[33mcommit 5a49dd664824e45414c59a478fa555d6689cd762[m
+Merge: 2eea3ba 5b2a56d
+Author: matbmoserufv <matbmoser@gmail.com>
+Date:   Wed Dec 30 23:19:26 2020 +0100
+
+    Merge tag 'v1.5' into develop
+    
+    Versión final con página principal y login
+
+[33mcommit 5b2a56da5dfbe05df956f54e677e74d603202d8f[m
+Merge: 20d0506 e4d795d
+Author: matbmoserufv <matbmoser@gmail.com>
+Date:   Wed Dec 30 23:18:48 2020 +0100
+
+    Merge branch 'release/1.5'
+
+[33mcommit e4d795df14e33a0f51c75595c2e7e2909e4f23bb[m
+Author: matbmoserufv <matbmoser@gmail.com>
+Date:   Wed Dec 30 23:17:57 2020 +0100
+
+    Añadido guardado de contacto en base de datos
+
+[33mcommit 2eea3bafca164bf7217e8b5060d58482ab6bb107[m
+Author: matbmoserufv <matbmoser@gmail.com>
+Date:   Wed Dec 30 22:43:57 2020 +0100
+
+    Versión Principal terminada
+
+[33mcommit 70f9d907e54b44c5208da9da53c18a08b2c7f2e4[m
+Author: matbmoserufv <matbmoser@gmail.com>
+Date:   Wed Dec 30 19:29:36 2020 +0100
+
+    Incorporación del Header
+
+[33mcommit f35ddebeb9ccb687e9f81080653ca4b8520a80bb[m
+Author: Carlos <63646480+CarlosSimonUFV@users.noreply.github.com>
+Date:   Wed Dec 30 16:53:19 2020 +0100
+
+    Actualizando main.css
+
+[33mcommit 2c7691663e446a6234dc6ab0b3cf12e1f2288b90[m
+Merge: e08cbcd f2744d8
+Author: charlysimonyt@gmail.com <charlysimonyt@gmail.com>
+Date:   Wed Dec 30 16:47:55 2020 +0100
+
+    Conflicto en main.css
+
+[33mcommit e08cbcd01eea61b909ce3cf6e19417b9e4db4ef8[m
+Author: charlysimonyt@gmail.com <charlysimonyt@gmail.com>
+Date:   Wed Dec 30 16:44:21 2020 +0100
+
+    Modificando footer.php
+
+[33mcommit e5dfeb53ec5b80e5703215527808b9a23e33b842[m
+Author: charlysimonyt@gmail.com <charlysimonyt@gmail.com>
+Date:   Wed Dec 30 16:05:09 2020 +0100
+
+    Añadiendo php para mandar correo en el formulario de contacto
+
+[33mcommit f95b5e6f96e875c6034daecdeb30d01931f33a0b[m
+Author: charlysimonyt@gmail.com <charlysimonyt@gmail.com>
+Date:   Wed Dec 30 16:04:41 2020 +0100
+
+    añadiendo modal de contacto
+
+[33mcommit 856dd23559c9f128aeb0b3a94d978836950856e6[m
+Author: charlysimonyt@gmail.com <charlysimonyt@gmail.com>
+Date:   Wed Dec 30 15:50:50 2020 +0100
+
+    Finalizando header.php
+
+[33mcommit 4209e0ffd63e5fc34d2449c70f16bbee6ac03f0c[m
+Author: charlysimonyt@gmail.com <charlysimonyt@gmail.com>
+Date:   Wed Dec 30 15:50:15 2020 +0100
+
+    Borrando el javascript menumovil
+
+[33mcommit b1ceb5126bff908ace2b45c344e4b895a1ae86f8[m
+Author: charlysimonyt@gmail.com <charlysimonyt@gmail.com>
+Date:   Wed Dec 30 15:47:00 2020 +0100
+
+    Añadiendo array de productos
+
+[33mcommit f2744d8228094ff179f67b2b3e289dfc93b1f3c3[m
+Author: matbmoserufv <matbmoser@gmail.com>
+Date:   Wed Dec 30 15:41:30 2020 +0100
+
+    Nuevo estilo página principal
+
+[33mcommit d88cd7132f97ed2a1a32b4bb4e431c0b2556c898[m
+Merge: dd6bdd4 a92e3ce
+Author: matbmoserufv <matbmoser@gmail.com>
+Date:   Wed Dec 30 15:03:31 2020 +0100
+
+    Actualizacion pagina principal
+
+[33mcommit dd6bdd4e5e60d96fa01282cfc036c014725834de[m
+Author: matbmoserufv <matbmoser@gmail.com>
+Date:   Wed Dec 30 13:27:18 2020 +0100
+
+    Cambios para servidor
+
+[33mcommit a92e3cee1f7cba607a3edf941326463e0e1da0d6[m
+Merge: bd62e06 9710607
+Author: Rafael Camarero <7836094@alumnos.ufv.es>
+Date:   Wed Dec 30 12:49:47 2020 +0100
+
+    Corrección Categorias
+
+[33mcommit bd62e0688bd2009ca52b776aa2740e26f65f69d9[m
+Author: Rafael Camarero <7836094@alumnos.ufv.es>
+Date:   Wed Dec 30 12:31:58 2020 +0100
+
+    Añadida función categorias
+
+[33mcommit 4cb0b5a8f1886f45bb3fe52ccecd249d68073974[m
+Author: CarlosSimonUFV <charlysimonyt@gmail.com>
+Date:   Wed Dec 30 06:06:54 2020 +0100
+
+    Javascript para el menú movil
+
+[33mcommit 1fad0894b8d01ed8984a77036f78979c8a87cb3d[m
+Author: CarlosSimonUFV <charlysimonyt@gmail.com>
+Date:   Wed Dec 30 06:06:24 2020 +0100
+
+    Añadiendo la clase mobileMenu al css para el menú movil
+
+[33mcommit 36aabe5a784a78a02b6d635be2c249f6a391d32f[m
+Author: CarlosSimonUFV <charlysimonyt@gmail.com>
+Date:   Wed Dec 30 06:05:18 2020 +0100
+
+    Menú movil adaptado
+
+[33mcommit 97106070931398f85b844d83686397bfdc538af9[m
+Author: matbmoserufv <matbmoser@gmail.com>
+Date:   Wed Dec 30 02:35:28 2020 +0100
+
+    Cambio en menu de usuario
+
+[33mcommit 35ade00873f1d37d014e2189cdfa91d01df7a358[m
+Merge: 44bedbd 20d0506
+Author: matbmoserufv <matbmoser@gmail.com>
+Date:   Wed Dec 30 02:30:55 2020 +0100
+
+    Merge tag 'v1.0' into develop
+    
+    Funcionalidad de Interfaz de Usuario con Login disponible, requiere
+    conexion con base de datos
+
+[33mcommit 20d0506cd334fcf269397622116ab9f875241470[m
+Merge: bafcbb7 44bedbd
+Author: matbmoserufv <matbmoser@gmail.com>
+Date:   Wed Dec 30 02:28:45 2020 +0100
+
+    Interfaz de usuario con login lista 'release/1.0'
+
+[33mcommit 44bedbdcad0f0d87a256b6aee2374752523b0987[m
+Author: matbmoserufv <matbmoser@gmail.com>
+Date:   Wed Dec 30 02:21:15 2020 +0100
+
+    Modificacion de Actualizar.php
+
+[33mcommit 5b3d4d1455598ac59a921dc63b7950b35ecb0c80[m
+Merge: bafcbb7 2a7b221
+Author: matbmoserufv <matbmoser@gmail.com>
+Date:   Wed Dec 30 02:14:10 2020 +0100
+
+    Merge branch 'feature/login' into develop
+
+[33mcommit 2a7b221af6446610afde60425db56f82edd5c8fb[m
+Author: matbmoserufv <matbmoser@gmail.com>
+Date:   Wed Dec 30 02:12:16 2020 +0100
+
+    Registro valida espacios en blanco, login menu de usuario y registro responsive, funcionalidad completa menu de usuario
+
+[33mcommit f1fb79f40b4b9dedb85c15c5ad5a567396f16d34[m
+Author: matbmoserufv <matbmoser@gmail.com>
+Date:   Tue Dec 29 21:20:53 2020 +0100
+
+    Registro actualizado
+
+[33mcommit bc622e440c21b68bf30bd0073fd09138cbc37866[m
+Author: matbmoserufv <matbmoser@gmail.com>
+Date:   Tue Dec 29 20:45:46 2020 +0100
+
+    Funcionalidad completa menu de usuario
+
+[33mcommit 26c39d61086ca90fce49551601b594a8e8b48a4a[m
+Author: charlysimonyt@gmail.com <charlysimonyt@gmail.com>
+Date:   Tue Dec 29 19:19:41 2020 +0100
+
+    Modificando css para la barra de búsqueda
+
+[33mcommit 631fe4617eb8fc5b63c694e89b645a6a6d6f4457[m
+Author: charlysimonyt@gmail.com <charlysimonyt@gmail.com>
+Date:   Tue Dec 29 19:19:01 2020 +0100
+
+    Barra de búsqueda funcional con los productos
+
+[33mcommit 4b38970fb756c4a7720c4f4d95d6cfb863b81d02[m
+Author: charlysimonyt@gmail.com <charlysimonyt@gmail.com>
+Date:   Tue Dec 29 17:50:57 2020 +0100
+
+    Haciendo responsive la barra de busqueda
+
+[33mcommit 73bee47129d0cca309f5c56bb9aa4ba271e8b054[m
+Author: matbmoserufv <matbmoser@gmail.com>
+Date:   Tue Dec 29 12:30:25 2020 +0100
+
+    Actulizacioón de About Iconos, tamaño y fotos
+
+[33mcommit b0a592a09ea2336b0c70ebdc821e831e5a7002a6[m
+Merge: 6ed951a b304bce
+Author: matbmoserufv <matbmoser@gmail.com>
+Date:   Tue Dec 29 11:49:30 2020 +0100
+
+    Merge branch 'feature/login' of https://github.com/matbmoser/proyecto-IS2 into feature/login
+
+[33mcommit 6ed951a973f5ec6647254f8673c55e05a4b451fe[m
+Author: matbmoserufv <matbmoser@gmail.com>
+Date:   Tue Dec 29 11:49:13 2020 +0100
+
+    Actualizacion del Menu de Usuario
+
+[33mcommit b304bce15ac9de0fe1f3cf3625df68a5a55f8c79[m
+Author: Martin Diz <martindiz23@gmail.com>
+Date:   Mon Dec 28 18:17:32 2020 +0100
+
+    Modificando texto
+
+[33mcommit 71d26c4890c2a56c1a0f0f5489362548ef7ddba8[m
+Author: Martin Diz <martindiz23@gmail.com>
+Date:   Mon Dec 28 18:05:03 2020 +0100
+
+    Ajuste about us
+
+[33mcommit 17b6d2ee038414d455b33ff6191c9ed018519fc4[m
+Author: Martin Diz <martindiz23@gmail.com>
+Date:   Mon Dec 28 17:50:07 2020 +0100
+
+    Modificando la colocacion de las imagenes en el about us
+
+[33mcommit 987dda092c58f8af2d10edbb1bc532f7c3cb962a[m
+Author: Martin Diz <martindiz23@gmail.com>
+Date:   Mon Dec 28 17:41:34 2020 +0100
+
+    Añadiendo imagenes en el about us
+
+[33mcommit 934322c2fe376b11965e0efeb6b004e22bee1f54[m
+Author: Martin Diz <martindiz23@gmail.com>
+Date:   Mon Dec 28 17:40:46 2020 +0100
+
+    Modificando el about us
+
+[33mcommit 3b739dfcb4ff5b6bb7b8b80a3cc64bab80b76b14[m
+Author: matbmoserufv <matbmoser@gmail.com>
+Date:   Mon Dec 28 17:22:59 2020 +0100
+
+    Actualizacion About Us, formulario de registro operativo
+
+[33mcommit 1d53700843d34ba3068c709cce05a7b98fab3d16[m
+Author: Martin Diz <martindiz23@gmail.com>
+Date:   Fri Dec 25 21:10:00 2020 +0100
+
+    Añado las imagenes para el footer
+
+[33mcommit b47d67ed735f98f80aeef6c067d9f7df91f98e20[m
+Author: Martin Diz <martindiz23@gmail.com>
+Date:   Fri Dec 25 21:08:50 2020 +0100
+
+    Añado el footer
+
+[33mcommit c5516f6882ca0bd7d933cc7e326cc8db5fba187a[m
+Author: Aina <ainamora@hotmail.com>
+Date:   Sun Dec 20 09:19:31 2020 +0100
+
+    subida nuevas imagenes
+
+[33mcommit 6c66f5c4885355575d1321958dda8982848dbded[m
+Author: Rafael Camarero <7836094@alumnos.ufv.es>
+Date:   Sat Dec 19 15:01:07 2020 +0100
+
+    Añadida página de registro
+
+[33mcommit 18a4160dc70f85818d953d9f8a32d7253812ebe2[m
+Author: matbmoserufv <matbmoser@gmail.com>
+Date:   Sat Dec 19 13:11:07 2020 +0100
+
+    Cambio header interfaz usuario
+
+[33mcommit 83499fe46360f5480a18daae04147481b07254b4[m
+Author: Aina <ainamora@hotmail.com>
+Date:   Sat Dec 19 10:37:19 2020 +0100
+
+    popups completados
+
+[33mcommit 66d3cb3718dee959d7c326d5d4a154c8b9e0ab84[m
+Author: Aina <ainamora@hotmail.com>
+Date:   Sat Dec 19 10:23:43 2020 +0100
+
+    corregido problemas con links a css, bootstrap y alguna imagen
+
+[33mcommit 271065c174ecce43513204bd534495aded4abec6[m
+Merge: 7b46db0 b3f96f6
+Author: Aina <ainamora@hotmail.com>
+Date:   Sat Dec 19 09:42:21 2020 +0100
+
+    quitado fichero funciones
+
+[33mcommit 7b46db03a34d467665575856be67cf8c001c4248[m
+Author: Aina <ainamora@hotmail.com>
+Date:   Sat Dec 19 09:28:54 2020 +0100
+
+    revision
+
+[33mcommit d6411a17ca4efb29500d62987b98903cdcf0baa7[m
+Author: charlysimonyt@gmail.com <charlysimonyt@gmail.com>
+Date:   Fri Dec 18 19:35:38 2020 +0100
+
+    Modificando css para el header
+
+[33mcommit b63f40ee17f7f38cec310d5d2d69dfc98e3e6ef0[m
+Author: charlysimonyt@gmail.com <charlysimonyt@gmail.com>
+Date:   Fri Dec 18 19:35:13 2020 +0100
+
+    Añadiendo carpeta de imagenes con el logo
+
+[33mcommit fd4704eb2c3613b06813d5a16900a8ed1a70f83f[m
+Author: charlysimonyt@gmail.com <charlysimonyt@gmail.com>
+Date:   Fri Dec 18 19:34:50 2020 +0100
+
+    Añadiendo php del header
+
+[33mcommit 9293f6d355b3edbbc871ca0f77f0111995a6df6e[m
+Author: charlysimonyt@gmail.com <charlysimonyt@gmail.com>
+Date:   Fri Dec 18 19:34:11 2020 +0100
+
+    Añadiendo la conexion de localhost
+
+[33mcommit f57d6e7f5fc752e9a4c8ad7bcb52e97f8f628843[m
+Author: matbmoserufv <matbmoser@gmail.com>
+Date:   Thu Dec 17 21:26:58 2020 +0100
+
+    Añadir producto, correctamente
+
+[33mcommit aaf2dbedc769f1ad17f06b992249f5052b12aabc[m
+Author: matbmoserufv <matbmoser@gmail.com>
+Date:   Thu Dec 17 18:49:23 2020 +0100
+
+    Actualización de Cambios
+
+[33mcommit b3f96f60365f711e150dafd7e3b72f753a31c047[m
+Author: Rafael Camarero <7836094@alumnos.ufv.es>
+Date:   Thu Dec 17 18:42:31 2020 +0100
+
+    Añadimos imágenes, iconos, la página de inicio y el pop-up de producto
+
+[33mcommit ab0342c216523d0c25594ef53a2d564d49a4425b[m
+Author: matbmoser <matbmoser@gmail.com>
+Date:   Thu Dec 17 05:13:02 2020 +0100
+
+    Interfaz de Usuario funcional, creacion de formulario para añadir producto
+
+[33mcommit 175410cc60fcdfc4ef0b1940b9128bd72201fbfb[m
+Author: matbmoser <matbmoser@gmail.com>
+Date:   Wed Dec 16 14:18:38 2020 +0100
+
+    Área de usuario creada con tabla de productos
+
+[33mcommit 357921c9281a70dad320b724ad3d47d4b9fdeffa[m
+Author: matbmoser <matbmoser@gmail.com>
+Date:   Mon Dec 14 16:25:00 2020 +0100
+
+    Añadida configuracion de login con google y modo oscuro actualizado
+
+[33mcommit 2bed8d862c17d9feecaaf4c3668bac62eecf8c4a[m
+Author: Aina <ainamora@hotmail.com>
+Date:   Sun Dec 13 10:45:56 2020 +0100
+
+    creada carpeta imagenes, conexion con bbdd, fichero php de funciones y visualizacion de productos
+
+[33mcommit 9fad81e4573011a469f6309bf5989d634d2cf277[m
+Author: matbmoser <matbmoser@gmail.com>
+Date:   Sat Dec 12 22:55:41 2020 +0100
+
+    Añadida capa de seguridad y encriptacion de datos en cookie para remember me
+
+[33mcommit c387b51aef953a353cf2c0aff6653c14cba9465f[m
+Author: matbmoser <matbmoser@gmail.com>
+Date:   Sat Dec 12 13:36:45 2020 +0100
+
+    Login añadido
+
+[33mcommit bafcbb7a3a0b571e528ef43b25a0f9aede671543[m
+Author: matbmoser <matbmoser@gmail.com>
+Date:   Sat Dec 12 13:23:16 2020 +0100
+
+    Estructura Inicial
+
+[33mcommit 8ebdeaa3d21df1686ae7d86fc50bac6af184c9c8[m
+Author: Mathias Moser <71728767+matbmoser@users.noreply.github.com>
+Date:   Sat Dec 12 12:47:31 2020 +0100
+
+    Create .gitignore
+
+[33mcommit 56e50549157bad11a2351075e6034d622ff4d8b3[m
+Author: Mathias Moser <71728767+matbmoser@users.noreply.github.com>
+Date:   Sat Dec 12 12:47:14 2020 +0100
+
+    Initial commit
