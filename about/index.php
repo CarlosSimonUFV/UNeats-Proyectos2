@@ -30,6 +30,11 @@
           background:white!important;
         color:black!important;
       }
+	  .btncheck{
+		background-image : url('../media/img/check.png');
+		background-repeat:no-repeat;
+		padding-top: 0px;
+	}
     </style>
 </head>
 <script src="../assets/js/dark-mode.js"></script>
@@ -156,6 +161,36 @@
                       <div class="item-name px-2">
                           <p class="mbr-fonts-style display-5">
                           Aina Mora Columbrans</p>
+                      </div>
+                      <div class="item-role px-2">
+                          <p>SM & Desarrollador</p>
+                          <p>Ingeniería Informática, con Ciberseguridad y Hacking Ético.</p>
+                      </div>
+                  </div>
+              </div>
+			  <div class="team-item col-lg-3 col-md-6 FadeLeft">
+                  <div class="item-image">
+                      <img src="../media/img/lua.jpg" alt="aina" title="">
+                  </div>
+                  <div class="item-caption py-3">
+                      <div class="item-name px-2">
+                          <p class="mbr-fonts-style display-5">
+                          Lua Mora Columbrans</p>
+                      </div>
+                      <div class="item-role px-2">
+                          <p>SM & Desarrollador</p>
+                          <p>Ingeniería Informática, con Ciberseguridad y Hacking Ético.</p>
+                      </div>
+                  </div>
+              </div>
+			  <div class="team-item col-lg-3 col-md-6 FadeLeft">
+                  <div class="item-image">
+                      <img src="../media/img/andy.jpg" alt="aina" title="">
+                  </div>
+                  <div class="item-caption py-3">
+                      <div class="item-name px-2">
+                          <p class="mbr-fonts-style display-5">
+                          Andrés Gascón Fernández</p>
                       </div>
                       <div class="item-role px-2">
                           <p>SM & Desarrollador</p>
