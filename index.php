@@ -459,7 +459,7 @@ $(document).ready(function(){
                                 </div>
                                 <div class="form-group">
                                     <label for="name"> Descripción del producto*</label>
-                                    <input type="test" class="form-control" id="descripción" name="descripción" placeholder="Descripción" required maxlength="50">
+                                    <input type="test" class="form-control" id="descripcion" name="descripcion" placeholder="Descripción" required maxlength="50">
                                     <div class="valid-feedback">Valido</div>
                                     <div class="invalid-feedback">Completa este campo por favor.</div>
                                 </div>
