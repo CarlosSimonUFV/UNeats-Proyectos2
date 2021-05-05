@@ -157,7 +157,7 @@
     <nav class="navbar navbar-expand-lg shadow justify-content-sm-start">
 
       <a class="navbar-brand order-0 order-lg-0 ml-lg-0 ml-2 mr-auto" href="#">
-      	<img style="width:100px;height:30px" src="../media/img/logo2.png">
+      	<img id="mylogo" style="width:250px;height:80px" src="../media/img/logo2.png">
 		
       </a>
 	  
