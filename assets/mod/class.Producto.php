@@ -4,8 +4,8 @@
 class Producto
 {
     private $dbHost     = "localhost";
-    private $dbUsername = "id11631880_matbmoser";
-    private $dbPassword = "a(dux>kqT%IMr(=7";
+    private $dbUsername = "CarlosSimon";
+    private $dbPassword = "feRp7A6RS6Jm3am4";
     private $dbName     = "id11631880_hypetech";
     private $table      = "producto";
 

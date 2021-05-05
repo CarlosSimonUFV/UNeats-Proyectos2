@@ -43,12 +43,12 @@ $(function(){
         if(localStorage.getItem("light") === "false"){
                 button.classList.remove("btn-outline-dark");
                 button.classList.add("btn-outline-light");
-                logo.src = location.protocol+"//"+location.hostname+"/IS2/media/img/logo2.png";
+                logo.src = location.protocol+"//"+location.hostname+"/UNeats-Proyectos2/media/img/logo2.png";
                 button.innerHTML = "<i class='fas fa-sun mr-1'></i> <span>Light Mode</span>";
         }else {
                 button.classList.remove("btn-outline-light");
                 button.classList.add("btn-outline-dark");
-                logo.src = location.protocol+"//"+location.hostname+"/IS2/media/img/logo1.png";
+                logo.src = location.protocol+"//"+location.hostname+"/UNeats-Proyectos2/media/img/logo1.png";
                 button.innerHTML = "<i class='fas fa-moon mr-1'></i> <span>Dark Mode</span>";
         }
         }
@@ -56,12 +56,12 @@ $(function(){
                 if(localStorage.getItem("light") === "false"){
                         button.classList.add("btn-outline-dark");
                         button.classList.remove("btn-outline-light");
-                        mylogo.src = location.protocol+"//"+location.hostname+"/IS2/media/img/logo2.png";
+                        mylogo.src = location.protocol+"//"+location.hostname+"/UNeats-Proyectos2/media/img/logo2.png";
                         button.innerHTML = "<i class='fas fa-sun mr-1'></i> <span>Light Mode</span>";
                     }else {
                         button.classList.add("btn-outline-light");
                         button.classList.remove("btn-outline-dark");
-                        mylogo.src = location.protocol+"//"+location.hostname+"/IS2/media/img/logo1.png";
+                        mylogo.src = location.protocol+"//"+location.hostname+"/UNeats-Proyectos2/media/img/logo1.png";
                         button.innerHTML = "<i class='fas fa-moon mr-1'></i> <span>Dark Mode</span>";
                     }
         }

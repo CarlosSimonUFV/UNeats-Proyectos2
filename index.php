@@ -1,12 +1,22 @@
 <?php
+session_start();
 	function Mostrarproducto($cat){
 			include("assets/mod/connect.php");
 		if (!$conexion) {
-		die('No se ha podido conectar a la base de datos');
-	}
+			die('No se ha podido conectar a la base de datos');
+		}
 	else{
 
 	$table = "producto";
+	if (isset($_SESSION['uni'])) {
+		if($_SESSION['uni'] == "poli"){
+			$table = "productopoli";
+		}else if($_SESSION['uni'] == "complu"){
+			$table = "productocomplu";
+		}
+	}
+
+	
 	$result=mysqli_query($conexion,"SELECT * FROM ".$table."");
 	$cols=mysqli_num_rows($result);
 	$mos=0;
@@ -110,6 +120,12 @@
 		color:var(--bg-color)!important;
 		transition: all .25s ease;
 	}
+	.btncheck{
+		background-image : url('./media/img/check.png');
+		background-repeat:no-repeat;
+		padding-top: 0px;
+	}
+	
 </style>
 </head>
 <script src="assets/js/dark-mode.js"></script>
@@ -117,13 +133,42 @@
 <header class="header sticky-top">
     <nav class="navbar navbar-expand-lg shadow justify-content-sm-start">
 
-      <a class="navbar-brand order-0 order-lg-0 ml-lg-0 ml-2 mr-auto" href="#">
-      	<img id="mylogo" src="media/img/logo2.png">
+      <a class="navbar-brand order-0 order-lg-0 ml-lg-0 ml-2 mr-auto" href="../">
+      	<img id="mylogo" style="width:250px;height:80px" src="./media/img/logo2.png">
       </a>
+	  
+	  <form action="seleccione_uni.php" method="GET" style="width:550px;padding-left:10px">
+		<label>Cambia uni:</label>
+		<select id="uni" name="uni" onchange="this.form.submit()">
+		  <?php if ($_SESSION['uni'] == "poli"){?>
+			<option value="ufv" >UFVeats</option>
+			<option value="poli" selected>POLIeats</option>
+			<option value="complu">COMPLUeats</option>
+		  <?php } ?>
+		  <?php if ($_SESSION['uni'] == "complu"){?>
+			<option value="ufv" >UFVeats</option>
+			<option value="poli">POLIeats</option>
+			<option value="complu" selected>COMPLUeats</option>
+		  <?php } ?>
+		  <?php if ($_SESSION['uni'] == "ufv"){?>
+			<option value="ufv" selected >UFVeats</option>
+			<option value="poli">POLIeats</option>
+			<option value="complu">COMPLUeats</option>
+		  <?php } ?>
+		  <?php if (!isset($_SESSION['uni'])){?>
+			<option value="ufv" selected >UFVeats</option>
+			<option value="poli">POLIeats</option>
+			<option value="complu">COMPLUeats</option>
+		  <?php } ?>
+		</select>
+			
+	  </form>
 
       <button class="navbar-toggler align-self-start mt-3" style="border-radius: 0!important;" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa fa-bars"></i>
       </button>
+	  
+	 
 
 	<div style="background:var(--color);" class="collapse navbar-collapse" id="navbarText">
 		<div  class="p-3 w-100 align-items-center d-flex flex-column flex-lg-row flex-xl-row justify-content-lg-end">
@@ -132,7 +177,11 @@
             <input class="form-control mr-sm-1 busqueda" id="myInput" autocomplete="off" type="text" placeholder="Búsqueda producto">
           </div>
             <button class="invertbd btn" data-target="producto" id="search" data-toggle='modal'><i class="fas fa-search"></i></button>
+            <button class="invertbd btn" href="#" id="añadirproducto" style="margin-left: 15px;" data-toggle="modal" data-target="#myModal2">Solicitud producto</button>
         </div>
+		<a class="navbar-brand order-0 order-lg-0 ml-lg-0 ml-2 mr-auto" href="ofertas/" style="padding-left:20px">
+			<img style="width:30px;height:30px" src="./media/img/oferta.png">
+		</a>
         <ul class="navbar-nav d-flex align-items-center">
           <li class="nav-item active">
             <a class="invert nav-link" href="#">Inicio</a>
@@ -142,6 +191,9 @@
           </li>
           <li class="nav-item">
             <a class="invert nav-link" href="#" data-toggle="modal" data-target="#myModal">Contacto</a>
+          </li>
+		   <li class="nav-item">
+            <a class="invert nav-link" href="./menudiario/">Menu diario</a>
           </li>
           <li class="nav-item">
 				  <a class="nav-link " href="./login/" ><i class="invert icono far fa-user mr-1 ml-1"></i></a>
@@ -426,6 +478,57 @@ $(document).ready(function(){
                                 <div class="form-group">
                                     <label for="name"> Mensaje*</label>
                                     <textarea class="form-control" type="textarea" name="mensaje" id="mensaje" placeholder="Escriba su mensaje aquí..." maxlength="6000" rows="7" required></textarea>
+                                    <div class="valid-feedback">Valido</div>
+                                    <div class="invalid-feedback">Completa este campo por favor.</div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="cancel" class="btn btn-secondary btn-lg mr-4 ml-4 mt-3" data-dismiss="modal">Cancelar</button>
+                                    <button type="submit" class="btn btn-primary btn-lg mr-2 mt-3" id="btnContactUs">Enviar &rarr;</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="myModal2" class="modal fade" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" style="max-width: 760px;">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Solicitud añadir producto</h4>
+                            <button type="button" class="btn close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="assets/mod/solicitudproducto.php" method="post" novalidate class="needs-validation">
+                                <p> Rellene el siguiente formulario introduciendo los datos del producto que hayas visto en la cafeteria y no está en la página web. </p>
+                                <p> Los campos requeridos están marcados con *. </p>
+                                <div class="form-group">
+                                    <label for="name"> Nombre del producto*</label>
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Nombre del producto..." required maxlength="50">
+                                    <div class="valid-feedback">Valido</div>
+                                    <div class="invalid-feedback">Completa este campo por favor.</div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="name"> Descripción del producto*</label>
+                                    <input type="test" class="form-control" id="descripcion" name="descripcion" placeholder="Descripción" required maxlength="50">
+                                    <div class="valid-feedback">Valido</div>
+                                    <div class="invalid-feedback">Completa este campo por favor.</div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email"> Ingredientes*</label>
+                                    <input type="text" class="form-control" id="ingredientes" name="ingredientes" placeholder="Ingredientes" required maxlength="50">
+                                    <div class="valid-feedback">Valido</div>
+                                    <div class="invalid-feedback">Completa este campo por favor.</div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="asunto">Calorias (Si las conoces)</label>
+                                    <input type="text" class="form-control" id="calorias" name="calorias" placeholder="Calorias" maxlength="50">
+                                    <div class="valid-feedback">Valido</div>
+                                    <div class="invalid-feedback">Completa este campo por favor.</div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="name"> Precio*</label>
+                                    <input type="text" class="form-control" id="precio" name="precio" placeholder="Precio" required maxlength="50">
                                     <div class="valid-feedback">Valido</div>
                                     <div class="invalid-feedback">Completa este campo por favor.</div>
                                 </div>
@@ -799,12 +902,12 @@ $(document).ready(function(){
             <table>
                 <tr>
                        <th><i class="email fas fa-envelope"></i></th>
-					   <th><a href="mailto:ufveats@gmail.com">ufveats@gmail.com</a></th>
+					   <th><a href="mailto:uneats@gmail.com">uneats@gmail.com</a></th>
 				</tr>
             </table> 
         </ul>
         <ul class="copyright">
-            <li><strong>UFV eats</strong></li>
+            <li><strong>UNeats</strong></li>
             <span class="punt">|</span>
 			<li>Todos los derechos reservados</li>
 			<span class="punt">|</span>
