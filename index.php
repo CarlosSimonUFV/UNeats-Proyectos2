@@ -133,7 +133,7 @@ session_start();
 <header class="header sticky-top">
     <nav class="navbar navbar-expand-lg shadow justify-content-sm-start">
 
-      <a class="navbar-brand order-0 order-lg-0 ml-lg-0 ml-2 mr-auto" href="#">
+      <a class="navbar-brand order-0 order-lg-0 ml-lg-0 ml-2 mr-auto" href="../">
       	<img id="mylogo" style="width:250px;height:80px" src="./media/img/logo2.png">
       </a>
 	  
@@ -902,12 +902,12 @@ $(document).ready(function(){
             <table>
                 <tr>
                        <th><i class="email fas fa-envelope"></i></th>
-					   <th><a href="mailto:ufveats@gmail.com">ufveats@gmail.com</a></th>
+					   <th><a href="mailto:uneats@gmail.com">uneats@gmail.com</a></th>
 				</tr>
             </table> 
         </ul>
         <ul class="copyright">
-            <li><strong>UFV eats</strong></li>
+            <li><strong>UNeats</strong></li>
             <span class="punt">|</span>
 			<li>Todos los derechos reservados</li>
 			<span class="punt">|</span>

@@ -94,12 +94,12 @@
             <table>
                 <tr>
                        <th><i class="email fas fa-envelope"></i></th>
-					   <th><a href="mailto:ufveats@gmail.com">ufveats@gmail.com</a></th>
+					   <th><a href="mailto:uneats@gmail.com">uneats@gmail.com</a></th>
 				</tr>
             </table> 
         </ul>
         <ul class="copyright">
-            <li><strong>UFV eats</strong></li>
+            <li><strong>UN eats</strong></li>
             <span class="punt">|</span>
 			<li>Todos los derechos reservados</li>
 			<span class="punt">|</span>
